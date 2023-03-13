@@ -1,8 +1,6 @@
 // Your code here
 const chai = require("chai");
 const expect = chai.expect;
-const spies = require("chai-spies");
-chai.use(spies);
 const Person = require("../problems/person");
 
 describe("Person class", function () {
@@ -48,7 +46,7 @@ describe("Person class", function () {
   describe("update method", function () {
     it("should throw a TypeError if the passed-in argument is not an object", function () {
       expect(() => person.update(5)).to.throw(TypeError);
-      expect(() => person.update(['Hasan', 22])).to.throw(TypeError);
+      expect(() => person.update(["Hasan", 22])).to.throw(TypeError);
     });
 
     it("should update the instance if the passed-in argument is a valid object", function () {
